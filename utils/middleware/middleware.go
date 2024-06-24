@@ -32,29 +32,25 @@ func JWTMiddleware() echo.MiddlewareFunc {
 	})
 }
 
-func ExtractToken(e echo.Context) (uuid.UUID, string, error) {
+func ExtractToken(e echo.Context) (uuid.UUID, error) {
 	user, ok := e.Get("user").(*jwt.Token)
 
 	if !ok {
-		return uuid.UUID{}, "", errors.New("invalid token claims")
+		return uuid.UUID{}, errors.New("invalid token claims")
 	}
 
 	claims, ok := user.Claims.(jwt.MapClaims)
 	if !ok {
-		return uuid.UUID{}, "", errors.New("invalid token claims")
+		return uuid.UUID{}, errors.New("invalid token claims")
 	}
 
 	userId, ok := claims["uuid"].(string)
 
 	if !ok {
-		return uuid.UUID{}, "", errors.New("invalid token claims")
+		return uuid.UUID{}, errors.New("invalid token claims")
 	}
 	userUUID, _ := uuid.FromString(userId)
 
-	name, ok := claims["name"].(string)
-	if !ok {
-		return uuid.UUID{}, "", errors.New("invalid token claims")
-	}
 
-	return userUUID, name, nil
+	return userUUID, nil
 }

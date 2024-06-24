@@ -11,5 +11,5 @@ type User struct {
 	Email       string `gorm:"unique"`
 	Password    string
 	PhoneNumber string
-	Name    string  
+	Name        string
 }

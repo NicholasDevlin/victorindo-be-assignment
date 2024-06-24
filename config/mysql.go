@@ -1,6 +1,7 @@
 package config
 
 import (
+	"assignment/migrations"
 	"fmt"
 
 	"os"
@@ -60,6 +61,6 @@ func StartDB(cfg *DBConfig) *gorm.DB {
 	if err != nil {
 		panic(err)
 	}
-	// migrations.InitMigrate(DB)
+	migrations.InitMigrate(DB)
 	return DB
 }

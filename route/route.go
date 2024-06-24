@@ -1,9 +1,9 @@
 package route
 
 import (
+	"gorm.io/gorm"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"gorm.io/gorm"
 
 	jwt "assignment/utils/middleware"
 )
@@ -14,4 +14,5 @@ func Route(e *echo.Echo, db *gorm.DB) {
 
 	eJwt := e.Group("")
 	eJwt.Use(jwt.JWTMiddleware())
+	UserRoute(e, db, eJwt)
 }
