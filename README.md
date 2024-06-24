@@ -9,7 +9,3 @@ Berupa CRUD, serta Produk terdapat 3 jenis yakni, item Jual, Item Assembly dan I
 
 Serta tentukan infrastruktur yang sesuai untuk membangun aplikasi ini yang kemudian harinya dapat diskalakan. 
 Nb: Bahasa pemograman dapat digunakan sesuai dengan yang dikuasai.
-![Uploading image.png…]()
-![Uploading image.png…]()
-![Uploading image.png…]()
-![Uploading image.png…]()
