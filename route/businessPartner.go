@@ -15,9 +15,7 @@ func BusinessPartnerRoute(e *echo.Echo, db *gorm.DB, eJwt *echo.Group) {
 	controller := controller.NewBusinessPartnerController(service)
 
 	eJwt.POST("/business-partner", controller.SaveBusinessPartner)
-
 	eJwt.GET("/business-partner", controller.GetAllBusinessPartner)
-	// eJwt.GET("/business-partner/:id", controller.GetBusinessPartner)
 	eJwt.PUT("/business-partner/:id", controller.UpdateBusinessPartner)
 	eJwt.DELETE("/business-partner/:id", controller.DeleteBusinessPartner)
 }

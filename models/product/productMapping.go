@@ -52,7 +52,19 @@ func ConvertDtoToRes(input ProductDto) *ProductRes {
 		Name:        input.Name,
 		Type:        input.Type,
 		Price:       input.Price,
+		Code:        input.Code,
 		Description: input.Description,
 		Stock:       input.Stock,
 	}
 }
+
+var AllowedTypes = []string{"Item Jual", "Item Assembly", "Item Asset"}
+func ValidType(t string) bool {
+	for _, v := range AllowedTypes {
+			if v == t {
+					return true
+			}
+	}
+	return false
+}
+

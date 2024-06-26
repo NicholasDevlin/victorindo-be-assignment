@@ -10,4 +10,5 @@ type ProductFilter struct {
 	Price       float64     `query:"price"`
 	Description string      `query:"description"`
 	Stock       int         `query:"stock"`
+	SortByName  bool        `query:"sortByName"`
 }

@@ -16,4 +16,5 @@ func Route(e *echo.Echo, db *gorm.DB) {
 	eJwt.Use(jwt.JWTMiddleware())
 	UserRoute(e, db, eJwt)
 	BusinessPartnerRoute(e, db, eJwt)
+	ProductRoute(e, db, eJwt)
 }

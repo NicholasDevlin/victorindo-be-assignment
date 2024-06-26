@@ -37,6 +37,14 @@ func GetCodeError(err error) int {
 		return http.StatusBadRequest
 	case ERR_INVALID_BUSINESS_PARTNER_TYPE:
 		return http.StatusBadRequest
+	case ERR_CODE_IS_EMPTY:
+		return http.StatusBadRequest
+	case ERR_PRICE_IS_EMPTY:
+		return http.StatusBadRequest
+	case ERR_PRODUCT_TYPE_IS_EMPTY:
+		return http.StatusBadRequest
+	case ERR_INVALID_PRODUCT_TYPE:
+		return http.StatusBadRequest
 	default:
 		return http.StatusInternalServerError
 	}

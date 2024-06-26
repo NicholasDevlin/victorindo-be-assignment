@@ -33,3 +33,7 @@ func (p *ProductType) Scan(value interface{}) error {
 func (p ProductType) Value() (driver.Value, error) {
     return string(p), nil
 }
+
+func (b ProductType) String() string {
+    return string(b)
+}
