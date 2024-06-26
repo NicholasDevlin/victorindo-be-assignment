@@ -31,6 +31,12 @@ func GetCodeError(err error) int {
 		return http.StatusUnauthorized
 	case ERR_DELETE_DATA:
 		return http.StatusInternalServerError
+	case ERR_BUSINESS_PARTNER_NOT_FOUND:
+		return http.StatusNotFound
+	case ERR_BUSINESS_PARTNER_TYPE_IS_EMPTY:
+		return http.StatusBadRequest
+	case ERR_INVALID_BUSINESS_PARTNER_TYPE:
+		return http.StatusBadRequest
 	default:
 		return http.StatusInternalServerError
 	}
